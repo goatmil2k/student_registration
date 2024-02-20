@@ -1,0 +1,191 @@
+import React, { useState } from 'react';
+
+function MyForm() {
+  const [gender, setGender] = useState(''); // State for radio button
+  const [hobbies, setHobbies] = useState([]); // State for checkboxes
+
+  const handleGenderChange = (event) => {
+    setGender(event.target.value);
+  };
+
+  const handleHobbiesChange = (event) => {
+    const hobby = event.target.value;
+    if (event.target.checked) {
+      // If checkbox is checked, add to the array
+      setHobbies([...hobbies, hobby]);
+    } else {
+      // If checkbox is unchecked, remove from the array
+      setHobbies(hobbies.filter((h) => h !== hobby));
+    }
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Access gender and hobbies state here for form submission or further processing
+    console.log('Gender:', gender);
+    console.log('Hobbies:', hobbies);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      {/* Radio buttons for gender */}
+      <label>
+        <input type="radio" name="gender" value="male" checked={gender === 'male'} onChange={handleGenderChange} />
+        Male
+      </label>
+      <label>
+        <input type="radio" name="gender" value="female" checked={gender === 'female'} onChange={handleGenderChange} />
+        Female
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="gender"
+          value="preferNotToSay"
+          checked={gender === 'preferNotToSay'}
+          onChange={handleGenderChange}
+        />
+        Prefer not to say
+      </label>
+
+      {/* Checkboxes for hobbies */}
+      <label>
+        <input type="checkbox" name="hobbies" value="reading" checked={hobbies.includes('reading')} onChange={handleHobbiesChange} />
+        Reading
+      </label>
+      <label>
+        <input type="checkbox" name="hobbies" value="gaming" checked={hobbies.includes('gaming')} onChange={handleHobbiesChange} />
+        Gaming
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          name="hobbies"
+          value="traveling"
+          checked={hobbies.includes('traveling')}
+          onChange={handleHobbiesChange}
+        />
+        Traveling
+      </label>
+      <label>
+        <input type="checkbox" name="hobbies" value="cooking" checked={hobbies.includes('cooking')} onChange={handleHobbiesChange} />
+        Cooking
+      </label>
+      <label>
+        <input type="checkbox" name="hobbies" value="sports" checked={hobbies.includes('sports')} onChange={handleHobbiesChange} />
+        Sports
+      </label>
+
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+
+export default MyForm;
+<Box sx={{
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center'
+}}>
+<label>Reading <input type="checkbox" name="hobbies" value="reading" checked={hobbies.includes('reading')} onChange={handleHobbiesChange} /></label>
+</Box>
+
+<Box sx={{
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center'
+}}>
+ <label>Reading <input type="checkbox" name="hobbies" value="gaming" checked={hobbies.includes('gaming')} onChange={handleHobbiesChange} /></label>
+</Box>
+
+<Box sx={{
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center'
+}}>
+ <label>Reading <input type="checkbox" name="hobbies" value="traveling" checked={hobbies.includes('traveling')} onChange={handleHobbiesChange} /></label>
+</Box>
+
+<Box sx={{
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center'
+}}>
+ <label>Reading <input type="checkbox" name="hobbies" value="cooking" checked={hobbies.includes('cooking')} onChange={handleHobbiesChange} /></label>
+</Box>
+
+<Box sx={{
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center'
+}}>
+ <label>Reading <input type="checkbox" name="hobbies" value="sports" checked={hobbies.includes('sports')} onChange={handleHobbiesChange} /></label>
+</Box>
+
+
+
+{!isUpdateMode && (
+  <Box sx={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+  }}>
+      <Button
+          onClick={handleClickForUpdate}
+          sx={{
+          px: 2,
+          py: 1,
+          width: '200px',
+          borderRadius: 2,
+          bgcolor: '#141c29',
+          color: 'white',
+          ":hover": {
+              bgcolor: "white",
+              color: 'black',
+          },
+          margin: '0 auto',
+          }}
+      >
+          Update Information
+      </Button>
+  </Box>
+)}
+{!isDeleteMode && isUpdateMode &&(
+   <Box sx={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginTop: '1rem',
+  }}>
+      <Button
+          onClick={handleClickForDelete}
+          sx={{
+          px: 2,
+          py: 1,
+          width: '200px',
+          borderRadius: 2,
+          bgcolor: '#f7050d',
+          color: 'white',
+          ":hover": {
+              bgcolor: "white",
+              color: 'black',
+          },
+          margin: '0 auto',
+          }}
+      >
+          Delete Student
+      </Button>
+  </Box>
+)}
+{isDeleteMode && (
+  <Box>
+      <Typography>Confirm Delete. Deleted Data Cannot Be Retrived</Typography>
+      <Box>
+          <Button sx={{
+              color: 'red'
+          }} onClick={confirmDelete}>Delete</Button>
+          <Button onClick={handleClickForDelete}>Cancel</Button>
+      </Box>
+  </Box>
+  
+)

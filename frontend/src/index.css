@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300&family=Roboto+Slab&family=Work+Sans&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: rgb(95, 84, 66);
+  font-family: "Dosis", serif;
+}
+
+.nav-link {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 8px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.color {
+  background-color: #9bb3a3;
+}
+
+.student-image {
+  width: 300px;
+  height: 300px
+}
+
+.register-form {
+  font-size: 16px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  padding: 1rem;
+  justify-content: center;
+  background-color: #141c29;
+  font-weight: 400;
+  margin: 1.5rem auto;
+  color: #fff;
+  border: 1px solid rgb(196, 188, 177);
+}
+
+.register-form textarea {
+  text-align: left !important;
+  background-color: rgb(196, 188, 177);
+}
+
+label {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.register-button {
+  border-width: 0;
+  border-style: none;
+  border-color: transparent;
+  margin: 1rem auto 0 auto;
+  padding: 2px;
+  width: 50%;
+  font-size: 20px;
+}
+
+.register-button:hover {
+  background-color: #141c29;
+  color: white;
+  border: 1px solid white;
+}
+
+.register-input {
+  color: #fff;
+  height: 25px;
+  padding: 5px;
+  background-color: rgb(196, 188, 177);
+  color:#141c29;
+  border-width: 0;
+  border-style: none;
+  border-color: transparent;
+  border-radius: 1px;
+  font-size: 15px;
+}
+
+.record-form {
+  margin: 1rem 0 0 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #141c29;
+  border-radius: 10px;
+  height: 50px;
+}
+
+.record-form label {
+  color: white;
+  font-weight: 400;
+  padding: 1px;
+}
+
+.update-input {
+  background-color: #141c29;
+  color: white;
+  width: 100%;
+  border: 1px solid white;
+  height: 20px;
+}
+
+.search-form {
+  margin: 1rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.search-form label {
+  font-size: 30px;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+}
+
+.search-form button {
+  margin-top: 1rem;
+  height: 40px;
+  width: 100px;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: #141c29;
+  color:bisque
+}
+
+.search-form button:hover {
+  background-color: aliceblue;
+  border: 1px solid black;
+  color: black;
+}
+
+
+.search-box {
+  margin-top: 0.5rem;
+  height: 30px;
+  font-size: 16px;
+  background-color: #fff;
+  padding-left: 10px;
+  border-radius: 25px;
+  border: none;
+  outline: none; 
+  box-shadow: none; 
+  
+}
+
+.radio, .checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin-top: -25px;
+}
+
+.radio label {
+  margin-right: 5px;
+}
+
+.checkbox label {
+  margin-right: 20px;
+}
+
+.info-form input, textarea, select {
+  border: none;
+  outline: none; 
+  box-shadow: none; 
+  text-align: right;
+  font-size: 20px;
+}
+
+.info-form textarea {
+  text-align: left !important;
+}
+
+.info-form label {
+  font-size: 20px;
+  color: white;
+}
+
+.info-form textarea, select {
+  background-color: #141c29;
+  color: white;
+  font-size: 16px !important;
+}
+
+.register-academic-table input {
+  width: 40%;
+  outline: none;
+  box-shadow: none;
+  border: 1px solid white;
+  background-color: #141c29;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+
+.delete-button {
+  width: 40px;
+  height: 40px;
+  background-color: rgb(189, 34, 34);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.delete-button:hover {
+  background-color: #f10606;
+}
+
+section {
+  color: #a53030
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
